@@ -1,0 +1,1 @@
+[#<Gnuplot::DataSet:0x007fb0c3d494e8 @data=[[100.0, 500.0, 750.0, 1000.0, 1500.0, 2000.0], [0.005717440983979032, 0.00424239070006297, 0.004016369485507314, 0.0038790204514843937, 0.003712520601309734, 0.0036108255979379472]], @axes=nil, @smooth=nil, @matrix=nil, @linecolor=nil, @linewidth=4, @using="1:2 smooth bezier", @with="lines", @title=nil>]

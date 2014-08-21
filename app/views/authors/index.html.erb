@@ -1,0 +1,14 @@
+<section>
+  <header>
+    <% if @authors.empty? %>
+      <h3>No Authors Defined</h3>
+    <% else %>
+      <h3>All Authors</h3>
+    <% end %>
+  </header>
+  <% @authors.each do |author| %>
+    <%= link_to author.full_name, author_path(author) %><hr id='test-rule'>
+  <% end %>
+  <br>
+  <p><%= link_to 'Add New author', add_author_path, class: 'btn btn-primary' %></p>
+</section>
