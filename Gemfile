@@ -33,7 +33,7 @@ gem 'spring',        group: :development
 gem 'carrierwave-dropbox', '1.2.1'
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'
