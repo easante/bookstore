@@ -34,6 +34,8 @@
           <td><%= image_tag(@book.book_cover_url) if @book.book_cover? %></td>
         </tr>
       </table>
+      <%= button_to "Add to cart", cart_items_path(book_id: @book.id) %>
+      <%= hidden_field :book_id, @book.id %>
     </div>
   </div>
 </section>

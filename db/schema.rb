@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140822025224) do
+ActiveRecord::Schema.define(version: 20140825033300) do
 
   create_table "authors", force: true do |t|
     t.string   "first_name"
@@ -35,6 +35,23 @@ ActiveRecord::Schema.define(version: 20140822025224) do
 
   add_index "books", ["publisher_id"], name: "index_books_on_publisher_id"
 
+  create_table "cart_items", force: true do |t|
+    t.integer  "cart_id"
+    t.integer  "book_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "quantity",                           default: 1
+    t.decimal  "price",      precision: 4, scale: 2
+  end
+
+  add_index "cart_items", ["book_id"], name: "index_cart_items_on_book_id"
+  add_index "cart_items", ["cart_id"], name: "index_cart_items_on_cart_id"
+
+  create_table "carts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "publications", force: true do |t|
     t.integer  "author_id"
     t.integer  "book_id"
@@ -53,10 +70,12 @@ ActiveRecord::Schema.define(version: 20140822025224) do
 
   create_table "users", force: true do |t|
     t.string   "email"
-    t.string   "name"
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "admin",           default: false
   end
 
 end

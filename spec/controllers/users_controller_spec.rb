@@ -42,12 +42,12 @@ describe UsersController do
 
     context "unsuccessful user sign up" do
       it "renders the new template when invalid user data is entered" do
-        post :create, user: Fabricate.attributes_for(:user, name: "")
+        post :create, user: Fabricate.attributes_for(:user, first_name: "")
         expect(response).to render_template :new
       end
 
       it "sets the flash error message" do
-        post :create, user: Fabricate.attributes_for(:user, name: "")
+        post :create, user: Fabricate.attributes_for(:user, first_name: "")
         expect(flash[:danger]).to be_present
       end
     end

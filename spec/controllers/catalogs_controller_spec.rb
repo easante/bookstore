@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe CatalogController do
+describe CatalogsController do
 
   describe "GET index" do
     let(:book1) { Fabricate(:book) }
     let(:book2) { Fabricate(:book) }
 
-    it "lists all the books" do      
+    it "lists all the books" do
       get :index
       expect(assigns(:books)).to match_array([book1, book2])
     end
