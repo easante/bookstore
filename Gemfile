@@ -17,6 +17,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'bootstrap_form', '2.1.1'
 gem 'figaro', '0.7.0'
 gem 'mini_magick', '3.8.0'
+gem 'stripe', '1.15.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

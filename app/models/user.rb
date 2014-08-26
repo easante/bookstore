@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :orders
+  
   validates :email, :first_name, :last_name, presence: true
 
   has_secure_password

@@ -1,7 +1,8 @@
 class CartsController < ApplicationController
-#  before_action :set_cart
+  before_action :set_cart
 
   def show
+#    fail
      @cart = Cart.find(params[:id])
   end
 

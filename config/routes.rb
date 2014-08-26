@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   resources :catalogs, only: [:index, :show]
   resources :carts, only: [:show, :destroy]
   resources :cart_items, only: [:new, :create]
-  resource :session, only: [:destroy]
+  resource  :session, only: [:destroy]
+  resources :orders, only: [:new, :create, :destroy]
 end

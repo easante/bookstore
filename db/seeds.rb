@@ -26,3 +26,5 @@
     page_count: 360, price: 66.37, description: 'A book on the awesome opensource plotting software',
     published_at: '2010-11-04', publisher_id: 4,
     book_cover: File.open(File.join(Rails.root, 'db/Proforma 2.jpg')))
+
+  User.create(email:'emmanuel@example.com', first_name:'Emmanuel', last_name:'Asante', password:'password')
