@@ -11,8 +11,8 @@
       <hr>
       <strong>Total: </strong><%= number_to_currency(@cart.total_sale) %>
       <%= button_to "Clear cart", cart_path(@cart), method: :delete,
-        data: { confirm: "Are you sure?"} %>
-      <%= button_to "Checkout", new_order_path, method: :get %>
+        data: { confirm: "Are you sure?"}, id: 'clear-cart-btn' %>
+      <%= button_to "Checkout", new_order_path, method: :get, id: 'checkout-btn' %>
     </div>
   </div>
 </section>
