@@ -57,7 +57,7 @@ group :development do
   gem 'thin', '1.6.2'
   gem "better_errors", "1.1.0"
   gem "binding_of_caller"
-  #gem "letter_opener"
+  gem "letter_opener", "1.2.0"
 end
 
 group :test do

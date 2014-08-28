@@ -11,6 +11,7 @@ class OrdersController < ApplicationController
     transfer_cart_items
 
     if @order.save
+      total_sale = (@cart.total_sale * 100).to_i
       @cart.destroy
       session[:cart_id] = nil
 
@@ -18,10 +19,11 @@ class OrdersController < ApplicationController
       token = params[:stripeToken]
       begin
         charge = Stripe::Charge.create(
-          amount: (@cart.total_sale * 100).to_i,
+          amount: total_sale,
           currency: "usd",
           card: token
         )
+        OrderNotifier.notify_on_successful_order(current_user, @order).deliver
         flash[:success] = "Order has been created."
         redirect_to root_path
       rescue Stripe::CardError => e
