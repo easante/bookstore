@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   has_many :orders
-  
+
   validates :email, :first_name, :last_name, presence: true
+  before_create :generate_token
 
   has_secure_password
 
@@ -12,5 +13,14 @@ class User < ActiveRecord::Base
 
   def full_name
     "#{first_name} #{last_name}"
+  end
+
+  def param
+    token
+  end
+
+private
+  def generate_token
+    self.token = SecureRandom.urlsafe_base64
   end
 end

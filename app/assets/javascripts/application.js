@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require order
+//= require publications
+// require turbolinks
 // require_tree .

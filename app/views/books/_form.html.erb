@@ -42,21 +42,24 @@
                       prompt: 'Select a publisher', class: 'form-control', hide_label: true %>
     </div>
   </div>
+
   <div class='form-group'>
     <label class='control-label col-sm-3'>Book cover</label>
     <div class='col-sm-9'>
       <%= f.file_field :book_cover, class: 'form-control', hide_label: true %>
     </div>
   </div>
-  <%= f.fields_for :publications do |publication| %>
-    <div class='form-group'>
-      <label class='control-label col-sm-3'>Author</label>
-      <div class='col-sm-9'>
-        <%= publication.select :author_id, Author.all.map { |a| [a.full_name, a.id] },
-                        prompt: 'Select an author', class: 'form-control', hide_label: true %>
-      </div>
-    </div>
-  <% end %>
+
+  <div id='authors'>
+    <%= render partial: 'publications/publication' %>
+  </div>
+
+  <div class='col-sm-9'>
+    <%#= link_to 'Add another author', 'javascript:', id: 'add-author' %>
+    <%= link_to 'Add another author', new_publication_path, remote: true,
+                    update: 'authors', position: 'after', id: 'add-author' %>
+  </div>
+  <%# end %>
   <div class='form-group actions control-group'>
     <div class='col-sm-offset-3'>
       <%= f.submit class: 'btn btn-primary' %>

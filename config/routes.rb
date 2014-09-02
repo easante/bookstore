@@ -9,11 +9,17 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new', as: 'signup'
   get '/signin', to: 'sessions#new', as: 'signin'
   post '/signin', to: 'sessions#create'
-
+  get "/reset_password", to: "password_resets#new"
 
   resources :authors,    except: [:new]
   resources :publishers, except: [:new]
-  resources :books, except: [:new]
+  resources :books, except: [:new] do
+    collection do
+      post :search, to: 'books#search'
+    end
+  end
+
+  resources :publications, only: [:new]
   resources :users, except: [:new]
   resources :catalogs, only: [:index, :show]
   resources :carts, only: [:show, :destroy]

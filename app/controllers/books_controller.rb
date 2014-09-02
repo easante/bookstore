@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   before_action :require_signin
   before_action :require_admin
-  before_action :set_book, except: [:index, :new, :create]
+  before_action :set_book, except: [:index, :new, :create, :search]
 
   def index
     @books = Book.all
@@ -44,6 +44,11 @@ class BooksController < ApplicationController
       flash[:success] = 'Book has been deleted.'
       redirect_to books_path
     end
+  end
+
+  def search
+    #require 'pry';binding.pry
+    @books = Book.search_by_title(params[:search_word])
   end
 
   private
