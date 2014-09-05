@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 feature 'Deleting Authors' do
+  let(:admin) { Fabricate(:admin) }
+
+  before do
+    signin_as admin
+  end
+  
   scenario 'deleting an author' do
     author = Fabricate(:author)
     visit root_path

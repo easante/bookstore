@@ -4,17 +4,23 @@ describe CartItemsController do
 
   describe "POST #create" do
     context "a successful create" do
-      let(:book) { Fabricate(:book) }
+      let!(:book) { Fabricate(:book) }
+      let(:cart) { Fabricate(:cart) }
+
       it "saves the new cart_item object" do
-#        book = Fabricate(:book)
-#        require 'pry';binding.pry
+        session[:cart_id] = cart.id
+
         post :create, cart_item: Fabricate.attributes_for(:cart_item,
-                                            book_id: book.id), book_id: book.id
+                                 cart: cart, book: book), book_id: book.id
         expect(CartItem.count).to eq(1)
       end
 
       it "redirects to the cart show action" do
-        post :create, cart_item: Fabricate.attributes_for(:cart_item), book_id: book.id
+        session[:cart_id] = cart.id
+
+        # require 'pry';binding.pry
+        post :create, cart_item: Fabricate.attributes_for(:cart_item,
+                                 cart: cart, book: book), book_id: book.id
         expect(response).to redirect_to cart_path(Cart.first.id)
       end
 
@@ -24,22 +30,30 @@ describe CartItemsController do
       end
     end
 
-    # context "unsuccessful create" do
-    #   it "it does not save the new cart_item object with invalid inputs" do
-    #     post :create, cart_item: Fabricate.attributes_for(:cart_item, title: nil)
-    #     expect(CartItem.count).to eq(0)
-    #   end
-    #
-    #   it "renders to the new template" do
-    #     post :create, cart_item: Fabricate.attributes_for(:cart_item, title: nil)
-    #     expect(response).to render_template :new
-    #   end
-    #
-    #   it "sets the failure flash message" do
-    #     post :create, cart_item: Fabricate.attributes_for(:cart_item, title: nil)
-    #     expect(flash[:danger]).to eq('CartItem has not been created.')
-    #   end
-    # end
+#     context "unsuccessful create" do
+#       let!(:book) { Fabricate(:book) }
+#       let(:cart) { Fabricate(:cart) }
+#
+#       it "does not save the new cart_item object" do
+#         session[:cart_id] = cart.id
+# #require 'pry';binding.pry
+#         post :create, cart_item: Fabricate.attributes_for(:cart_item, book: book), book_id: book.id
+#         expect(CartItem.count).to eq(0)
+#       end
+#
+#       it "renders the new template" do
+#         session[:cart_id] = cart.id
+#
+#         # require 'pry';binding.pry
+#         post :create, cart_item: Fabricate.attributes_for(:cart_item, book: book), book_id: book.id
+#         expect(response).to render_template('new')
+#       end
+#
+#       it "sets the error flash message" do
+#         post :create, cart_item: Fabricate.attributes_for(:cart_item, book: book), book_id: book.id
+#         expect(flash[:danger]).to eq('Cart item has not been created.')
+#       end
+#     end
   end
 
 end

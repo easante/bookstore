@@ -6,7 +6,7 @@ class PasswordResetsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user
       OrderNotifier.send_password_reset_link(user).deliver
-      render template: :confirm_password_reset
+      render template: '/password_resets/confirm_password_reset'
       false
     else
       flash[:danger] = params[:email] ? "Email invalid." : "Email can't be blank."
@@ -31,6 +31,9 @@ class PasswordResetsController < ApplicationController
     else
       redirect_to expired_token_path
     end
+  end
+
+  def expired_token
   end
 
 end

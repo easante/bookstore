@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 feature 'Creating Authors' do
+  let(:admin) { Fabricate(:admin) }
+
+  before do
+    signin_as admin
+  end
+
   scenario 'create a valid author' do
     visit root_path
     click_link 'Authors'

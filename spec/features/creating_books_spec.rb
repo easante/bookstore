@@ -2,6 +2,12 @@ require 'spec_helper'
 
 feature 'Creating Books' do
   let!(:wiley) { Fabricate(:publisher, name: 'Wiley') }
+  let(:admin) { Fabricate(:admin) }
+
+  before do
+    signin_as admin
+  end
+
 
   scenario 'create a valid book' do
     visit root_path

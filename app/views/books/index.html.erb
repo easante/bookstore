@@ -1,15 +1,4 @@
-<article>
-<%= form_tag(search_books_path, :html => {class: "col-md-12"}) do %>
-  <div class="form-group col-sm-8 ">
-    <%= text_field_tag :search_word, nil, placeholder:"Search for books here", class: "form-control"  %>
-  </div>
-    <div class='col-sm-4'>
-      <%= submit_tag "Search", class: 'btn btn-default' %>
-    </div>
-<% end %>
-</article>
-<br>
-<br>
+
 <section>
   <header>
     <% if @books.empty? %>

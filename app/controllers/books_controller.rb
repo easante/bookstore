@@ -46,11 +46,6 @@ class BooksController < ApplicationController
     end
   end
 
-  def search
-    #require 'pry';binding.pry
-    @books = Book.search_by_title(params[:search_word])
-  end
-
   private
     def book_params
       params.require(:book).permit(:title, :isbn, :page_count, :price, :description,

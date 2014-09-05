@@ -34,10 +34,10 @@ describe UsersController do
 
   describe "POST create" do
     context "successful user sign up" do
-      # it "redirects to the sign_in_path" do
-      #   post :create, user: Fabricate.attributes_for(:user)
-      #   expect(response).to redirect_to signin_path
-      # end
+      it "redirects to the user show path" do
+        post :create, user: Fabricate.attributes_for(:user)
+        expect(response).to redirect_to user_path(User.first)
+      end
     end
 
     context "unsuccessful user sign up" do

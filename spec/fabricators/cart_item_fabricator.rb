@@ -1,6 +1,6 @@
 Fabricator(:cart_item) do
-  cart_id { Faker::Number.number(1) }
-  book_id { Faker::Number.number(1) }
-  price { Faker::Number.number(1) }
+  cart
+  book
+  price { Faker::Number.number(2) }
   quantity { Faker::Number.number(1) }
 end

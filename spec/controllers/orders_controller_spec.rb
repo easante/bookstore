@@ -16,15 +16,34 @@ describe OrdersController do
   end
 
   describe "POST #create" do
+    let(:cart) { Fabricate(:cart) }
+    let(:john) { Fabricate(:user) }
+    let!(:cart_item) { Fabricate(:cart_item, cart: cart) }
+    let(:token) do
+      Stripe::Token.create(
+        :card => {
+        :number => '4242424242424242',
+        :exp_month => 9,
+        :exp_year => 2015,
+        :cvc => 314
+        }
+      ).id
+    end
+
     it "saves the new order object" do
-      session[:user_id] = Fabricate(:user).id
-      post :create, order: Fabricate.attributes_for(:order)
+      session[:cart_id] = cart.id
+      session[:user_id] = john.id
+
+      # require 'pry';binding.pry
+      post :create, order: Fabricate.attributes_for(:order, user: john), stripeToken: token
       expect(Order.count).to eq(1)
     end
 
     it "sets the success flash message" do
-      session[:user_id] = Fabricate(:user).id
-      post :create, order: Fabricate.attributes_for(:order)
+      session[:cart_id] = cart.id
+      session[:user_id] = john.id
+
+      post :create, order: Fabricate.attributes_for(:order, user: john), stripeToken: token
       expect(flash[:success]).to eq('Order has been created.')
     end
 

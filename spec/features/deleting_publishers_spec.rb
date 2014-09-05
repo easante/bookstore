@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 feature 'Deleting Publishers' do
+  let(:admin) { Fabricate(:admin) }
+
+  before do
+    signin_as admin
+  end
+
   scenario 'deleting an publisher' do
     publisher = Fabricate(:publisher)
     visit root_path

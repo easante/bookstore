@@ -22,9 +22,6 @@ describe SessionsController do
   describe "POST create" do
     context "successful sign in" do
       before do
-#        clear_current_user
-#        user = Fabricate(:user)
-
         post :create, { email: @user.email, password: @user.password }
       end
 

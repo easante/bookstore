@@ -1,13 +1,17 @@
 require 'spec_helper'
 
 feature 'Editing Publishers' do
+  let(:admin) { Fabricate(:admin) }
+  let!(:publisher) { Fabricate(:publisher) }
+
   before do
-    @publisher = Fabricate(:publisher)
+    signin_as admin
   end
+
   scenario 'successfully editing an publisher' do
     visit root_path
     click_link 'Publishers'
-    click_link @publisher.name
+    click_link publisher.name
     click_link 'Edit'
 
     fill_in 'Name', with: 'Paul'
@@ -19,7 +23,7 @@ feature 'Editing Publishers' do
   scenario 'editing an publisher with invalid fields fails' do
     visit root_path
     click_link 'Publishers'
-    click_link @publisher.name
+    click_link publisher.name
     click_link 'Edit'
 
     fill_in 'Name', with: ''

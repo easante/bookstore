@@ -32,4 +32,20 @@ describe CatalogsController do
     end
   end
 
+  describe "POST search" do
+    it "returns an array of books that match the search string" do
+      rails3 = Fabricate(:book, title: 'Rails 3 in Action')
+
+      post :search, search_word: 'Rails'
+      expect(assigns(:books)).to eq [rails3]
+    end
+
+    it "renders the search template" do
+      rails3 = Fabricate(:book, title: 'Rails 3 in Action')
+
+      post :search, search_word: 'Rails'
+      expect(response).to render_template('search')
+    end
+  end
+
 end

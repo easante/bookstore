@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-sm-10 col-sm-offset-1">
       <%= bootstrap_form_for @user, url: password_reset_path(params[:id]) do |f| %>
+        <div class="col-sm-10">
         <header>
           <h3>Reset Your Password</h3>
         </header>
@@ -11,6 +12,7 @@
         <fieldset class="form-group action">
           <%= f.submit "Reset Password", class: "btn btn-default" %>
         </fieldset>
+      </div>
       <% end %>
     </div>
   </div>

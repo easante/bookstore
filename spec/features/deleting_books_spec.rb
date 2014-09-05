@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 feature 'Deleting Books' do
+  let(:admin) { Fabricate(:admin) }
+
+  before do
+    signin_as admin
+  end
+
   scenario 'deleting a book' do
     book = Fabricate(:book)
     visit root_path

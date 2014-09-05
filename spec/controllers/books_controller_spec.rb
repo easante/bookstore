@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 describe BooksController do
+  let(:admin) { Fabricate(:admin) }
+
+  before do
+    session[:user_id] = admin.id
+  end
+
   describe "GET #new" do
     it "assigns a new book object to @book variable" do
       get :new

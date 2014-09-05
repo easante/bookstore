@@ -11,6 +11,7 @@ class OrdersController < ApplicationController
     transfer_cart_items
 
     if @order.save
+      # require 'pry';binding.pry
       total_sale = (@cart.total_sale * 100).to_i
       @cart.destroy
       session[:cart_id] = nil

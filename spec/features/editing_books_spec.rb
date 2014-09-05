@@ -1,14 +1,17 @@
 require 'spec_helper'
 
 feature 'Editing Books' do
+  let(:admin) { Fabricate(:admin) }
+  let!(:book) { Fabricate(:book) }
+  let!(:wiley) { Fabricate(:publisher, name: 'Wiley') }
+
   before do
-    @book = Fabricate(:book)
-    @wiley = Fabricate(:publisher, name: 'Wiley')
+    signin_as admin
   end
   scenario 'successfully editing a book' do
     visit root_path
     click_link 'Books'
-    click_link @book.title
+    click_link book.title
     click_link 'Edit'
 
     fill_in 'Title', with: 'John Bull'
@@ -26,7 +29,7 @@ feature 'Editing Books' do
   scenario 'editing a book with invalid fields fails' do
     visit root_path
     click_link 'Books'
-    click_link @book.title
+    click_link book.title
     click_link 'Edit'
 
     fill_in 'Title', with: ''
