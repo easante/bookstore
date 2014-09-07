@@ -50,18 +50,20 @@
     </div>
   </div>
 
-  <%= f.fields_for :publications  do |pub| %>
-  <div id='authors'>
-    <div class='form-group'>
+  <%= f.fields_for :publications do |pub| %>
+    <div class='form-group' id='authors'>
       <label class='control-label col-sm-3'>Author</label>
       <div class='col-sm-9'>
         <%= pub.select :author_id, options_for_select(Author.all.collect { |a| [a.full_name, a.id] }),
                           prompt: 'Select an author', class: 'form-control', hide_label: true  %>
       </div>
     </div>
-  </div>
   <% end %>
-
+<!--
+  <div class='form-group' id='authors'>
+    <%= render partial: 'publications/publication' %>
+  </div>
+-->
   <div class='col-sm-9'>
     <%#= link_to 'Add another author', 'javascript:', id: 'add-author' %>
     <%= link_to 'Add another author', new_publication_path, remote: true,

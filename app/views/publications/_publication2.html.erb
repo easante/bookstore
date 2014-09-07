@@ -1,0 +1,14 @@
+<%= fields_for @book do |f| %>
+  <%= f.fields_for :publications do |pub| %>
+<!--    <div class='form-group'> -->
+      <label class='control-label col-sm-3'>Author</label>
+      <div class='col-sm-9'>
+        <label class="sr-only control-label" for="book_publications_attributes_0_author_id">Author</label>
+        <%= pub.select :author_id, options_for_select(Author.all.collect { |a| [a.full_name, a.id] }),
+          prompt: 'Select an author', class: 'form-control', hide_label: true  %>
+        <%#= pub.select :author_id, Author.all.map { |a| [a.full_name, a.id] },
+          prompt: 'Select an author', class: 'form-control', hide_label: true  %>
+      </div>
+<!--    </div> -->
+  <% end %>
+<% end %>

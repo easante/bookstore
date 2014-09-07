@@ -64,10 +64,10 @@ group :test do
   gem 'shoulda-matchers'
   gem 'capybara'
   gem 'faker'
-  #gem 'database_cleaner'
+  gem 'database_cleaner'
   #gem 'capybara-email', github: 'dockyard/capybara-email'
   #gem 'vcr'
   #gem 'webmock'
-  #gem 'selenium-webdriver'
-  #gem 'capybara-webkit'
+  gem 'selenium-webdriver', '2.42.0'
+  gem 'capybara-webkit', '1.3.0'
 end

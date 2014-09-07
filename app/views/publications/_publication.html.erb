@@ -1,11 +1,13 @@
 <%= fields_for @book do |f| %>
   <%= f.fields_for :publications do |pub| %>
-    <div class='form-group'>
-      <label class='control-label col-sm-3'>Author</label>
-      <div class='col-sm-9'>
-        <div class='form-group form-control'>
-          <%= pub.select :author_id, options_for_select(Author.all.collect { |a| [a.full_name, a.id] }),
-            hide_label: true, prompt: 'Select an author'  %>
+    <div class="container">
+      <div class='row'>
+        <div class='form-group'>
+          <label class='control-label col-sm-3'>Author</label>
+          <div class='col-sm-9'>
+            <%= pub.select :author_id, options_for_select(Author.all.collect { |a| [a.full_name, a.id] }),
+              prompt: 'Select an author', class: 'form-control', hide_label: true  %>
+          </div>
         </div>
       </div>
     </div>
