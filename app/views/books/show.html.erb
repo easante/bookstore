@@ -29,6 +29,12 @@
           <td><strong>Published at:</strong></td>
           <td><%= @book.published_at %></td>
         </tr>
+        <% @book.authors.each do |author| %>
+          <tr>
+            <td><strong>Author:</strong></td>
+            <td><%= author.full_name %></td>
+          </tr>
+        <% end %>
         <tr>
           <td><strong>Book cover:</strong></td>
           <td><%= image_tag(@book.book_cover_url) if @book.book_cover? %></td>

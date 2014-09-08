@@ -13,8 +13,6 @@ class Book < ActiveRecord::Base
 
   mount_uploader :book_cover, BookCoverUploader
 
-  accepts_nested_attributes_for :publications
-
   def self.search_by_title(title)
     where('title LIKE ?', "%#{title}%").order(:title)
   end

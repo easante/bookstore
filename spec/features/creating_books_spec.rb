@@ -21,15 +21,13 @@ feature 'Creating Books' do
     fill_in 'Isbn', with: 'John Bull'
     fill_in 'Page count', with: 189
     fill_in 'Price', with: 54.23
-print page.html
+#print page.html
     fill_in 'Description', with: 'John Bull'
     fill_in 'Published at', with: '2014-01-01'
     select 'Wiley', from: 'Publisher'
     attach_file 'Book cover', 'db/Proforma 1.jpg'
-    select 'Agatha Christie', from: 'Author'
-    click_link 'Add another author'
-
-    select 'Ryan Bigg', from: 'Author'
+    check author1.full_name
+    check author2.full_name
     click_button 'Create Book'
 
     expect(page).to have_content('Book has been created.')
@@ -49,8 +47,8 @@ print page.html
     fill_in 'Published at', with: '2014-01-01'
     select 'Wiley', from: 'Publisher'
     attach_file 'Book cover', 'db/Proforma 1.jpg'
-    select 'Agatha Christie', from: 'Author'
-    click_link 'Add another author'
+    check author1.full_name
+    check author2.full_name
 
     click_button 'Create Book'
 
