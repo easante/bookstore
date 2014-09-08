@@ -58,6 +58,8 @@ group :development do
   gem "better_errors", "1.1.0"
   gem "binding_of_caller"
   gem "letter_opener", "1.2.0"
+  gem 'guard-spork', '~> 1.5.1'
+  gem 'guard-rspec', '~> 4.2.4', require: false
 end
 
 group :test do
@@ -70,4 +72,5 @@ group :test do
   #gem 'webmock'
   gem 'selenium-webdriver', '2.42.0'
   gem 'capybara-webkit', '1.3.0'
+  gem 'spork-rails', '~> 4.0.0'
 end
