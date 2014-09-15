@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140902034203) do
+ActiveRecord::Schema.define(version: 20140914042234) do
 
   create_table "authors", force: true do |t|
     t.string   "first_name"
@@ -97,6 +97,9 @@ ActiveRecord::Schema.define(version: 20140902034203) do
     t.datetime "updated_at"
     t.boolean  "admin",           default: false
     t.string   "token"
+    t.string   "address"
+    t.string   "city"
+    t.string   "postal_code"
   end
 
 end

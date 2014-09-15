@@ -1,4 +1,4 @@
-<section class="sign_in container">
+<section class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-1">
       <%= bootstrap_form_tag url: signin_path, html: { class:'sign_in' } do |f| %>
@@ -14,6 +14,15 @@
           <%= link_to "Forgotten Password?", reset_password_path %>
         </fieldset>
       <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-1">
+      <hr>
+      <fieldset class="form-group" id="signup-link">
+        Or<br>
+        <%= link_to "Sign up", signup_path %>
+      </fieldset>
     </div>
   </div>
 </section>

@@ -43,8 +43,9 @@
 .titles {
   padding-top: 10px;
   margin-bottom: 20px;
-  background-color: #485454;
-  color: white;
+  background-color: #CBF1FE;
+/*  background-color: #485454; */
+  color: #000000;
   font-size: 100%;
   text-transform: uppercase;
   display: block;
@@ -84,4 +85,16 @@ footer {
   color: red;
   display: inline-block;
   margin-top: 5px;
+}
+
+#clear-cart-btn, #checkout-btn {
+  display: inline-block;
+}
+
+#cart-total {
+  padding-bottom: 1.5em;
+}
+
+#signup-link {
+  font-size: 200%;
 }

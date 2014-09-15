@@ -2,9 +2,9 @@ class User < ActiveRecord::Base
   has_many :orders
 
   validates :email, :first_name, :last_name, presence: true
-  before_create :generate_token
-
   has_secure_password
+
+  before_create :generate_token
 
   def self.authenticate(email, password)
     user = User.find_by(email: email)

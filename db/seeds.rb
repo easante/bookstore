@@ -17,14 +17,44 @@
     {name: 'Peachpit Press'}, {name: 'Manning'}, {name: 'Apress'},
     {name: 'Prentice Hall'}])
 
-  Book.create!(title: 'JavaScript Visual Quickstart Guide', isbn: '978-0-321-77297-8',
-    page_count: 518, price: 38.75, description: 'A very cool and thorough js book',
-    published_at: '2012-08-23', publisher_id: 3,
-    book_cover: File.open(File.join(Rails.root, 'db/Proforma 1.jpg')))
+Book.create!(title: 'JavaScript Visual Quickstart Guide', isbn: '978-0-321-77297-8',
+  page_count: 518, price: 38.75, description: 'A very cool and thorough js book',
+  published_at: '2012-08-23', publisher_id: 3,
+  book_cover: File.open(File.join(Rails.root, 'db/Proforma 1.jpg')))
 
-  Book.create!(title: 'Gnuplot in Action', isbn: '978-1-933-98839-9',
-    page_count: 360, price: 66.37, description: 'A book on the awesome opensource plotting software',
-    published_at: '2010-11-04', publisher_id: 4,
-    book_cover: File.open(File.join(Rails.root, 'db/Proforma 2.jpg')))
+Book.create!(title: 'Gnuplot in Action', isbn: '978-1-933-98839-9',
+  page_count: 360, price: 66.37, description: 'A book on the awesome opensource plotting software',
+  published_at: '2010-11-04', publisher_id: 4,
+  book_cover: File.open(File.join(Rails.root, 'db/Proforma 2.jpg')))
+
+Book.create!(title: 'JavaScript Visual Quickstart Guide', isbn: '978-0-321-77297-8',
+  page_count: 518, price: 38.75, description: 'A very cool and thorough js book',
+  published_at: '2012-08-23', publisher_id: 3,
+  book_cover: File.open(File.join(Rails.root, 'db/Proforma 1.jpg')))
+
+Book.create!(title: 'Gnuplot in Action', isbn: '978-1-933-98839-9',
+  page_count: 360, price: 66.37, description: 'A book on the awesome opensource plotting software',
+  published_at: '2010-11-04', publisher_id: 4,
+  book_cover: File.open(File.join(Rails.root, 'db/Proforma 2.jpg')))
+
+Book.create!(title: 'JavaScript Visual Quickstart Guide', isbn: '978-0-321-77297-8',
+  page_count: 518, price: 38.75, description: 'A very cool and thorough js book',
+  published_at: '2012-08-23', publisher_id: 3,
+  book_cover: File.open(File.join(Rails.root, 'db/Proforma 1.jpg')))
+
+Book.create!(title: 'Gnuplot in Action', isbn: '978-1-933-98839-9',
+  page_count: 360, price: 66.37, description: 'A book on the awesome opensource plotting software',
+  published_at: '2010-11-04', publisher_id: 4,
+  book_cover: File.open(File.join(Rails.root, 'db/Proforma 2.jpg')))
+
+Book.create!(title: 'JavaScript Visual Quickstart Guide', isbn: '978-0-321-77297-8',
+  page_count: 518, price: 38.75, description: 'A very cool and thorough js book',
+  published_at: '2012-08-23', publisher_id: 3,
+  book_cover: File.open(File.join(Rails.root, 'db/Proforma 1.jpg')))
+
+Book.create!(title: 'Gnuplot in Action', isbn: '978-1-933-98839-9',
+  page_count: 360, price: 66.37, description: 'A book on the awesome opensource plotting software',
+  published_at: '2010-11-04', publisher_id: 4,
+  book_cover: File.open(File.join(Rails.root, 'db/Proforma 2.jpg')))
 
   User.create(email:'emmanuel@example.com', first_name:'Emmanuel', last_name:'Asante', password:'password')

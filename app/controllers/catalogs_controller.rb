@@ -2,7 +2,7 @@ class CatalogsController < ApplicationController
   before_action :set_cart
 
   def index
-    @books = Book.all
+    @books = Book.all.page(params[:page]).per(5)
 #    reset_session
   end
 

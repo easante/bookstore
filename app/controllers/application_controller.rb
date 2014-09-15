@@ -16,6 +16,7 @@ private
 
   def require_signin
     unless current_user
+      session[:intended_destination] = request.fullpath
       flash[:danger] = "Please sign in first!"
       redirect_to signin_path
     end
