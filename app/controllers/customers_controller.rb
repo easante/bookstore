@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class CustomersController < ApplicationController
   before_action :set_user, except: [:index, :new, :create]
 
   def index
@@ -10,7 +10,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @user.addresses.build
   end
 
   def create
@@ -53,9 +52,8 @@ class UsersController < ApplicationController
   private
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :password,
-                                   :password_confirmation, addresses_attributes:
-                                   [:address_line1, :address_line2, :city,
-                                   :zipcode])
+                                   :password_confirmation, :address, :city,
+                                   :postal_code)
     end
 
     def set_user

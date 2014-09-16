@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140914042234) do
+ActiveRecord::Schema.define(version: 20140915230603) do
+
+  create_table "addresses", force: true do |t|
+    t.string   "address_line1"
+    t.string   "address_line2"
+    t.string   "city"
+    t.string   "zipcode"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "addresses", ["user_id"], name: "index_addresses_on_user_id"
 
   create_table "authors", force: true do |t|
     t.string   "first_name"
@@ -48,6 +60,20 @@ ActiveRecord::Schema.define(version: 20140914042234) do
   add_index "cart_items", ["cart_id"], name: "index_cart_items_on_cart_id"
 
   create_table "carts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "customer_profiles", force: true do |t|
+    t.string   "address"
+    t.string   "city"
+    t.string   "postal_code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "employee_profiles", force: true do |t|
+    t.string   "employee_num"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -97,9 +123,6 @@ ActiveRecord::Schema.define(version: 20140914042234) do
     t.datetime "updated_at"
     t.boolean  "admin",           default: false
     t.string   "token"
-    t.string   "address"
-    t.string   "city"
-    t.string   "postal_code"
   end
 
 end

@@ -23,6 +23,8 @@ private
   end
 
   def require_admin
+    require_signin
+    
     unless current_user.admin?
       flash[:danger] = "You have to be an admin to do that."
       redirect_to root_path
