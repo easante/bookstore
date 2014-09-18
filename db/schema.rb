@@ -64,20 +64,6 @@ ActiveRecord::Schema.define(version: 20140915230603) do
     t.datetime "updated_at"
   end
 
-  create_table "customer_profiles", force: true do |t|
-    t.string   "address"
-    t.string   "city"
-    t.string   "postal_code"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "employee_profiles", force: true do |t|
-    t.string   "employee_num"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "order_items", force: true do |t|
     t.integer  "order_id"
     t.integer  "book_id"
@@ -123,6 +109,9 @@ ActiveRecord::Schema.define(version: 20140915230603) do
     t.datetime "updated_at"
     t.boolean  "admin",           default: false
     t.string   "token"
+    t.string   "address"
+    t.string   "city"
+    t.string   "postal_code"
   end
 
 end

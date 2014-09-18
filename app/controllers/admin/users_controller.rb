@@ -19,7 +19,7 @@ class Admin::UsersController < Admin::BaseController
     @user = User.new(usr_params)
     if @user.save
       flash[:success] = 'User has been created.'
-      redirect_to admin_users_path
+      redirect_to [:admin, @user]
     else
       flash.now[:danger] = 'User has not been created.'
       render :new
