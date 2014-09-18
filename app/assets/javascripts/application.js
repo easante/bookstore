@@ -16,6 +16,7 @@
 //= require bootstrap
 //= require books
 //= require order
+//= require carts
 //= require publications
 // require turbolinks
 // require_tree .

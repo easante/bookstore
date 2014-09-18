@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   # root 'dashboard#index'
   root 'catalogs#index'
 
+  namespace :admin do
+    root to: 'base#index'
+    resources :users
+  end
+
   get '/about', to: 'dashboard#about', as: 'about'
   get '/add_author', to: 'authors#new', as: 'add_author'
   get '/add_publisher', to: 'publishers#new', as: 'add_publisher'

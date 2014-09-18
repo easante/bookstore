@@ -15,14 +15,14 @@
       <div class='container'>
         <%= render 'shared/messages' %>
         <div class='row'>
-          <div class='col-md-10 col-md-offset-1 content'>
+          <div class='col-md-9 content'>
             <% if content_for?(:sidebar) %>
-              <div class='col-md-3 left'>
+              <div class='col-md-4 left'>
                 <div id= 'left-content'>
                   <%= yield :sidebar %>
                 </div>
               </div>
-              <div class='col-md-9 inner'>
+              <div class='col-md-8 inner'>
                 <div id='right-content'>
                   <%= yield %>
                 </div>
@@ -34,6 +34,11 @@
                 </div>
               </div>
             <% end %>
+          </div>
+          <div class='col-md-3'>
+            <div id="cart">
+              <%= render @cart %>
+            </div>
           </div>
         </div>
       </div>

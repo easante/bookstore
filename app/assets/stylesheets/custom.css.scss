@@ -76,10 +76,12 @@ footer {
   width: 5em;
 }
 
+/*
 #book-show {
   margin-left: -70px;
   width: 40em;
 }
+*/
 
 .price-class {
   color: red;
@@ -97,4 +99,17 @@ footer {
 
 #signup-link {
   font-size: 200%;
+}
+
+.user-list {
+  padding-bottom: 5px;
+}
+
+#new-user-link {
+  padding-top: 30px;
+}
+
+#paginate {
+  border-bottom: 1px solid black;
+  margin-bottom: 15px;
 }

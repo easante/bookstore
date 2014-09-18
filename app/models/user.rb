@@ -6,8 +6,6 @@ class User < ActiveRecord::Base
   has_secure_password
 
   accepts_nested_attributes_for :addresses
-
-
   before_create :generate_token
 
 
