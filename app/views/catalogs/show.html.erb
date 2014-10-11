@@ -1,44 +1,97 @@
-<section class='container'>
+<section>
   <div class='row'>
-    <div class='col-sm-8'>
+    <div class='col-sm-12'>
       <header class='col-sm-10'>
         <h3 class='titles' id='book-show'><%= "#{@book.title}" %>'s Details</h3>
       </header>
-      <div class='col-sm-10 col-sm-offset-1'>
-      <table class='table table-shift'>
-        <tr>
-          <td><strong>ISBN:</strong></td>
-          <td><%= @book.isbn %></td>
-        </tr>
-        <tr>
-          <td><strong>Page count:</strong></td>
-          <td><%= @book.page_count %></td>
-        </tr>
-        <tr>
-          <td><strong>Price:</strong></td>
-          <td><%= number_to_currency(@book.price) %></td>
-        </tr>
-        <tr>
-          <td><strong>Description:</strong></td>
-          <td><%= @book.description %></td>
-        </tr>
-        <tr>
-          <td><strong>Publisher:</strong></td>
-          <td><%= @book.publisher.name %></td>
-        </tr>
-        <tr>
-          <td><strong>Published at:</strong></td>
-          <td><%= @book.published_at %></td>
-        </tr>
-        <tr>
-          <td><strong>Book cover:</strong></td>
-          <td><%= image_tag(@book.book_cover_url) if @book.book_cover? %></td>
-        </tr>
-      </table>
+      <div class='col-sm-10'>
+        <div class='col-sm-3'>
+          <strong>ISBN:</strong>
+        </div>
+        <div class='col-sm-9'>
+          <%= @book.isbn %>
+        </div>
+      </div>
+      <div class='col-sm-10'>
+        <hr>
+      </div>
 
-      <%= button_to "Add to cart", cart_items_path(book_id: @book.id), remote: true %>
+      <div class='col-sm-10'>
+        <div class='col-sm-3'>
+          <strong>Page count:</strong>
+        </div>
+        <div class='col-sm-9'>
+          <%= @book.page_count %>
+        </div>
+      </div>
+      <div class='col-sm-10'>
+        <hr>
+      </div>
+
+      <div class='col-sm-10'>
+        <div class='col-sm-3'>
+          <strong>Price:</strong>
+        </div>
+        <div class='col-sm-9'>
+          <%= number_to_currency(@book.price) %>
+        </div>
+      </div>
+      <div class='col-sm-10'>
+        <hr>
+      </div>
+
+      <div class='col-sm-10'>
+        <div class='col-sm-3'>
+          <strong>Description:</strong>
+        </div>
+        <div class='col-sm-9'>
+          <%= @book.description %>
+        </div>
+      </div>
+      <div class='col-sm-10'>
+        <hr>
+      </div>
+
+      <div class='col-sm-10'>
+        <div class='col-sm-3'>
+          <strong>Publisher:</strong>
+        </div>
+        <div class='col-sm-9'>
+          <%= @book.publisher.name %>
+        </div>
+      </div>
+      <div class='col-sm-10'>
+        <hr>
+      </div>
+
+      <div class='col-sm-10'>
+        <div class='col-sm-3'>
+          <strong>Published at:</strong>
+        </div>
+        <div class='col-sm-9'>
+          <%= @book.published_at %>
+        </div>
+      </div>
+      <div class='col-sm-10'>
+        <hr>
+      </div>
+
+      <div class='col-sm-10'>
+        <div class='col-sm-3'>
+          <strong>Book cover:</strong>
+        </div>
+        <div class='col-sm-9'>
+          <%= image_tag(@book.book_cover_url) if @book.book_cover? %>
+        </div>
+      </div>
+      <div class='col-sm-10'>
+        <hr>
+      </div>
+
+      <div class='col-sm-10'>
+      <%= button_to "Add to cart", cart_items_path(book_id: @book.id), remote: true, class: 'btn btn-default' %>
       <%= hidden_field :book_id, @book.id %>
-    </div>
+      </div>
     </div>
   </div>
 </section>

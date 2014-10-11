@@ -2,9 +2,9 @@ class CartItemsController < ApplicationController
   before_action :set_cart
 
   def create
-    @cart_item = @cart.add_book_to_items(params[:book_id])
+    @cart_item_created = @cart.add_book_to_items(params[:book_id])
     respond_to do |format|
-      if @cart_item.save
+      if @cart_item_created
         format.html { redirect_to root_path }
         # format.html { redirect_to @cart_item.cart, success: 'Cart item has been created.' }
         format.js

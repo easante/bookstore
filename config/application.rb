@@ -28,5 +28,6 @@ module Bookstore
     # config.i18n.default_locale = :de
     #config.assets.precompile += %w( order.js )
     #config.assets.enabled = true
+    config.assets.precompile += %w( *.png *.jpg *.jpeg *.gif )
   end
 end

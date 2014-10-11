@@ -1,11 +1,20 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  background: #0D2C40; /*#C879B2; */
+  color: #fff;
+  font-family: Georgia, Times, serif;
+}
 
 .content {
-  border-left: 2px solid #F7F7F7;
-  border-right: 2px solid #F7F7F7;
+/*  border-left: 2px solid #F7F7F7;
+  border-right: 2px solid #F7F7F7; */
   margin-top: 0px;
+  border-right: 2px solid #F7F7F7;
 }
 
 .sidebar-link {
@@ -28,7 +37,6 @@
 }
 
 .left, .inner {
-/*    border: 1px solid green; */
     padding: 1em;
 }
 
@@ -37,15 +45,18 @@
   background: #F7F7F7;
   padding: 0.075em 1em 0.5em 1em;
   margin-top: 15px;
-  border: 2px solid #485454;
+/*  border: 2px solid #485454; */
 }
 
 .titles {
   padding-top: 10px;
   margin-bottom: 20px;
-  background-color: #CBF1FE;
+/*  background-color: #CBF1FE; */
+  background-color: #F4B400; /* #CBF1FE; */
+/*  background-color: #0D8C40; /* #CBF1FE; */
 /*  background-color: #485454; */
-  color: #000000;
+/*  color: #0D2C40; */
+  color: #fff;
   font-size: 100%;
   text-transform: uppercase;
   display: block;
@@ -63,7 +74,7 @@
 footer {
   text-align: center;
   margin-top: 20px;
-  border-top: 2px solid blue;
+  border-top: 2px solid #F7F7F7;
   padding-top: 5px;
 }
 
@@ -84,7 +95,7 @@ footer {
 */
 
 .price-class {
-  color: red;
+  color: #fff000;
   display: inline-block;
   margin-top: 5px;
 }
@@ -110,6 +121,10 @@ footer {
 }
 
 #paginate {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #F7F7F7;
   margin-bottom: 15px;
+}
+
+a {
+  color: #fff;
 }

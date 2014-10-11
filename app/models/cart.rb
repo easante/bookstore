@@ -8,10 +8,11 @@ class Cart < ActiveRecord::Base
 
 #    require 'pry';binding.pry
     if item.nil?
-      item = cart_items.build(book_id: book_id, quantity: 1, price: book_price)
+      cart_items.create(book_id: book_id, quantity: 1, price: book_price)
+      # item = cart_items.build(book_id: book_id, quantity: 1, price: book_price)
     else
-      item.quantity += 1
-      item
+      quantity = item.quantity + 1
+      cart_items.first.update(quantity: quantity)
     end
   end
 

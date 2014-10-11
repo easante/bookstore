@@ -13,10 +13,10 @@
 //= require jquery
 //= require jquery-ui/datepicker
 //= require jquery_ujs
-//= require bootstrap
+// require turbolinks
+//= require bootstrap-sprockets
 //= require books
 //= require order
 //= require carts
 //= require publications
-// require turbolinks
 // require_tree .
